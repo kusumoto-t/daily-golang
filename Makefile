@@ -13,7 +13,6 @@ new-prac:
 	mkdir -p $(DATE)/
 	touch $(DATE)/main.go
 	echo "package main" > $(DATE)/main.go
-	cd $(DATE)
 goconfirm:
 	@echo $(GOVERSION)
 	@echo $(GOOS)
