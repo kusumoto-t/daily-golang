@@ -13,6 +13,10 @@ new-prac:
 	mkdir -p $(DATE)/
 	touch $(DATE)/main.go
 	echo "package main" > $(DATE)/main.go
+prac-push:
+	git add .
+	git commit -m "add $(DATE)"
+	git push
 goconfirm:
 	@echo $(GOVERSION)
 	@echo $(GOOS)
