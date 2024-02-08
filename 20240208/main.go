@@ -8,6 +8,7 @@ import (
 	"testClean/usecase"
 )
 
+// TODO: ディレクトリ構成
 func main() {
 
 	userRepo := repository.NewInMemoryUserRepository()
