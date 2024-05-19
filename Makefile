@@ -7,12 +7,19 @@ NOW=$(shell date)
 
 DATE=$(shell date +"%Y%m%d")
 
+# 初期化設定
+INIT ?=yes
+
 now:
 	@echo $(NOW)
 new-prac:
 	mkdir -p $(DATE)/
-	touch $(DATE)/main.go
-	echo "package main" > $(DATE)/main.go
+	ifeq ($(INIT), no)
+		echo "Skipping touch initial file"
+	else
+		touch $(DATE)/main.go
+		echo "package main" > $(DATE)/main.go
+	endif
 prac-push:
 	git add .
 	git commit -m "add $(DATE)"
