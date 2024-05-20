@@ -14,12 +14,12 @@ now:
 	@echo $(NOW)
 new-prac:
 	mkdir -p $(DATE)/
-	ifeq ($(INIT), no)
+ifeq ($(INIT), no)
 		echo "Skipping touch initial file"
-	else
+else
 		touch $(DATE)/main.go
 		echo "package main" > $(DATE)/main.go
-	endif
+endif
 prac-push:
 	git add .
 	git commit -m "add $(DATE)"
